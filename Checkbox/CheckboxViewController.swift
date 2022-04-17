@@ -13,7 +13,10 @@ final class CheckboxViewController: UIViewController {
     private var store = Set<AnyCancellable>()
     
     private let checkbox: Checkbox = {
-        let viewModel = CheckboxViewModel(identifier: "Checkbox 0", description: "Subscribe o un like", type: .squareCheckmarkFill)
+        let viewModel = CheckboxViewModel(
+            identifier: "Checkbox 0",
+            description: "Subscribe o un like",
+            type: .squareCheckmarkFill)
         let checkbox = Checkbox(viewModel: viewModel)
         return checkbox
     }()
@@ -86,7 +89,10 @@ final class CheckboxViewController: UIViewController {
         
         for index in 1...5 {
             let checkbox: Checkbox = {
-                let viewModel = CheckboxViewModel(identifier: "Checkbox \(index)", description: "Checkbox en Stack View \(index)", type: .square)
+                let viewModel = CheckboxViewModel(
+                    identifier: "Checkbox \(index)",
+                    description: "Checkbox en Stack View \(index)",
+                    type: .square)
                 let checkbox = Checkbox(viewModel: viewModel)
                 checkbox.setTintColor(color: .purple)
                 return checkbox
@@ -97,7 +103,10 @@ final class CheckboxViewController: UIViewController {
         
         for index in 1...5 {
             let checkbox: Checkbox = {
-                let viewModel = CheckboxViewModel(identifier: "Checkbox \(index)", description: "Checkbox en Stack View \(index)", type: .circleCheckMark)
+                let viewModel = CheckboxViewModel(
+                    identifier: "Checkbox \(index)",
+                    description: "Checkbox en Stack View \(index)",
+                    type: .circleCheckMark)
                 let checkbox = Checkbox(viewModel: viewModel)
                 checkbox.setTintColor(color: .red)
                 return checkbox

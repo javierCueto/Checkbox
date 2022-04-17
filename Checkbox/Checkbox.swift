@@ -14,7 +14,11 @@ struct CheckboxViewModel {
     var isChecked: Bool
     let type: CheckboxType
     
-    init(identifier: String,description: String, isChecked: Bool = false, type: CheckboxType = .square) {
+    init(identifier: String,
+         description: String,
+         isChecked: Bool = false,
+         type: CheckboxType = .square
+    ) {
         self.identifier = identifier
         self.description = description
         self.isChecked = isChecked
@@ -98,7 +102,8 @@ final class Checkbox: UIStackView {
     }
     
     private func checkboxAction() -> UIAction{
-        return UIAction { _ in
+        return UIAction { [weak self] _ in
+            guard let self = self else { return }
             self.viewModel.isChecked.toggle()
             self.updateUI()
             self.viewModelObserver.send(self.viewModel)
